@@ -548,11 +548,16 @@ datablock PlayerData(DefaultPlayerData)
    maxUnderwaterBackwardSpeed = 7.8;
    maxUnderwaterSideSpeed = 4.0;
 
-   jumpForce = "747";
+   jumpForce = "1700";
    jumpEnergyDrain = 0;
    minJumpEnergy = 0;
    jumpDelay = "15";
    airControl = 0.3;
+   
+   //! fire spread coefficient
+   normalRatio = 2;
+   jumpRatio = 80;
+   runRatio = 30;
 
    fallingSpeedThreshold = -6.0;
 

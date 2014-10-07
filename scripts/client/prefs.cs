@@ -102,5 +102,5 @@ $pref::Water::disableTrueReflections = "0";
 $pref::windEffectRadius = "25";
 $pref::WorldEditor::cameraFOV = "75";
 $Pref::WorldEditor::FileSpec = "Torque Mission Files (*.mis)|*.mis|All Files (*.*)|*.*|";
-$Pref::WorldEditor::LastPath = "C:/Users/user_15/Desktop/Torque3D-development/Torque3D-development/My Projects/TestTask/game";
+$Pref::WorldEditor::LastPath = "C:/Users/Алексей/Desktop/Torque3D-development/Torque3D-development/My Projects/TestTask/game";
 $pref::WorldEditor::visibleDistanceScale = "1";

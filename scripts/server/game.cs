@@ -31,6 +31,9 @@ $Game::EndGamePause = 10;
 
 //-----------------------------------------------------------------------------
 
+	//! Fire scattering ajustment
+$spread_ratio = DefaultPlayerData.normalRatio;
+
 function onServerCreated()
 {
    // Server::GameType is sent to the master server.
@@ -188,3 +191,4 @@ function GameConnection::RefreshWeaponHud(%client, %amount, %preview, %ret, %zoo
 {
    commandToClient(%client, 'RefreshWeaponHud', %amount, %preview, %ret, %zoomRet, %amountInClips);
 }
+

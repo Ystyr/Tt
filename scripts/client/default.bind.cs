@@ -20,6 +20,8 @@
 // IN THE SOFTWARE.
 //-----------------------------------------------------------------------------
 
+
+
 if ( isObject( moveMap ) )
    moveMap.delete();
 new ActionMap(moveMap);
@@ -83,22 +85,27 @@ function setSpeed(%speed)
 
 function moveleft(%val)
 {
-   $mvLeftAction = %val * $movementSpeed;
+	$mvLeftAction = %val * $movementSpeed;
+	fireScatteringContr ( %val );
 }
 
 function moveright(%val)
 {
    $mvRightAction = %val * $movementSpeed;
+   fireScatteringContr ( %val );
 }
 
 function moveforward(%val)
 {
    $mvForwardAction = %val * $movementSpeed;
+   fireScatteringContr ( %val );
+   	
 }
 
 function movebackward(%val)
 {
    $mvBackwardAction = %val * $movementSpeed;
+   fireScatteringContr ( %val );
 }
 
 function moveup(%val)
@@ -116,6 +123,17 @@ function movedown(%val)
    if(%object.isInNamespaceHierarchy("Camera"))
       $mvDownAction = %val * $movementSpeed;
 }
+
+
+function fireScatteringContr ( %val ) {
+
+	if (%val) 
+		$spread_ratio = DefaultPlayerData.runRatio;
+	else
+		if ($spread_ratio != DefaultPlayerData.jumpRatio)
+			$spread_ratio = DefaultPlayerData.normalRatio;
+}
+
 
 function turnLeft( %val )
 {
@@ -177,7 +195,8 @@ function pitch(%val)
 
 function jump(%val)
 {
-   $mvTriggerCount2++;
+	$mvTriggerCount2++;	
+    $spread_ratio = DefaultPlayerData.jumpRatio;
 }
 
 function gamePadMoveX( %val )
@@ -251,6 +270,7 @@ function gamepadPitch(%val)
       $mvPitchUpSpeed = -%pitchAdj;
    }
 }
+
 
 moveMap.bind( keyboard, a, moveleft );
 moveMap.bind( keyboard, d, moveright );

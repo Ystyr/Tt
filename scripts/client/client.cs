@@ -24,6 +24,7 @@
 // Server Admin Commands
 //-----------------------------------------------------------------------------
 
+
 function SAD(%password)
 {
    if (%password !$= "")
@@ -180,3 +181,24 @@ function turretMountCallback(%turret, %player, %mounted)
       turretMap.pop();
    }
 }
+
+
+
+	//! fire scattering debug
+
+function setProjectileSpread (%ratio) {
+
+	$spread_ratio = %ratio;
+}
+
+
+function showPSpreadRatio () {
+	
+	echo("$spread_q = " @ $spread_ratio);
+
+}
+
+
+
+
+

@@ -36,6 +36,7 @@ $WeaponSlot = 0;
 // Weapon Class
 //-----------------------------------------------------------------------------
 
+
 function Weapon::onUse(%data, %obj)
 {
    // Default behavior for all weapons is to mount it into the object's weapon
@@ -176,10 +177,11 @@ function WeaponImage::onUnmount(%this, %obj, %slot)
 // greater accuracy, higher values increase the spread pattern.
 // ----------------------------------------------------------------------------
 
+
 function WeaponImage::onFire(%this, %obj, %slot)
 {
    //echo("\c4WeaponImage::onFire( "@%this.getName()@", "@%obj.client.nameBase@", "@%slot@" )");
-
+		
    // Make sure we have valid data
    if (!isObject(%this.projectile))
    {
@@ -211,7 +213,7 @@ function WeaponImage::onFire(%this, %obj, %slot)
          // points in a circle
          %matrix = "";
          for(%j = 0; %j < 3; %j++)
-            %matrix = %matrix @ (getRandom() - 0.5) * 2 * 3.1415926 * %this.projectileSpread @ " ";
+            %matrix = %matrix @ (getRandom() - 0.5) * $spread_ratio * 3.1415926 * %this.projectileSpread @ " ";
          %mat = MatrixCreateFromEuler(%matrix);
 
          // Which we'll use to alter the projectile's initial vector with

@@ -173,7 +173,7 @@ datablock ShapeBaseImageData(RyderWeaponImage)
 
    projectile = BulletProjectile;
    projectileType = Projectile;
-   projectileSpread = "0.0";
+   projectileSpread = "0.001";
 
    altProjectile = GrenadeLauncherProjectile;
    altProjectileSpread = "0.02";

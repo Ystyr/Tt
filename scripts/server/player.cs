@@ -90,6 +90,7 @@ function PlayerData::doDismount(%this, %obj, %forced)
 
    // This function is called by player.cc when the jump trigger
    // is true while mounted
+   
    %vehicle = %obj.mVehicle;
    if (!%obj.isMounted() || !isObject(%vehicle))
       return;
@@ -152,8 +153,12 @@ function PlayerData::doDismount(%this, %obj, %forced)
 
 //----------------------------------------------------------------------------
 
+
 function PlayerData::onCollision(%this, %obj, %col)
 {
+	
+   $spread_ratio = DefaultPlayerData.normalRatio;
+   
    if (!isObject(%col) || %obj.getState() $= "Dead")
       return;
 
@@ -463,3 +468,4 @@ function Player::use(%player, %data)
 
    Parent::use(%player, %data);
 }
+
